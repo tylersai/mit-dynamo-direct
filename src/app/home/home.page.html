@@ -1,0 +1,47 @@
+<ion-content>
+  <div class="container py-4">
+    <div class="row justify-content-center">
+      <div class="col-md-5">
+        <h4 class="text-center text-secondary">{{title}}</h4>
+        <hr>
+        <div class="mb-2">
+          <div class="lds-facebook mx-auto"><div [hidden]="!showLoader"></div><div [hidden]="!showLoader"></div><div [hidden]="!showLoader"></div></div>
+        </div>
+        
+        <div>
+          <h5 class="text-center text-secondary">Admin Login</h5>
+          <form>
+            <div class="form-group">
+              <label for="username" class="text-secondary">Username:</label>
+              <input type="text" name="username" [(ngModel)]="admin.username" class="form-control" id="username"
+                placeholder="Enter Username" autocomplete="off" required>
+            </div>
+            <div class="form-group">
+              <label for="password" class="text-secondary">Password:</label>
+              <input type="password" name="password" [(ngModel)]="admin.password" class="form-control" id="password"
+                autocomplete="off" required>
+            </div>
+  
+            <div class="form-group">
+              <button type="button" class="btn btn-outline-primary" (click)="goLogin()">Login</button>
+             
+            </div>
+  
+          </form>
+        </div>
+        <div *ngIf="showError">
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          <strong>Failed!</strong> Unable to login. Please try again.
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+</ion-content>
+
+<ion-footer>
+  <small class="m-3 d-block text-secondary">&copy; Sai Han Inc.</small>
+</ion-footer>

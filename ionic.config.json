@@ -1,0 +1,7 @@
+{
+  "name": "mit-dynamo-direct",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

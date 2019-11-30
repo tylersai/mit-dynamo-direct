@@ -1,0 +1,46 @@
+<ion-content>
+  <div class="container py-3">
+    <div class="row justify-content-center">
+      <div class="col-md-5">
+        <h3 class="text-info d-block my-3">MIT Member Detail</h3>
+        <hr>
+        <div class="row my-3"> 
+        <div class="col-12">
+        <button class="btn btn-danger float-right d-inline-block mx-1" (click)="goDelete()">Delete</button>
+        <button class="btn btn-success float-right d-inline-block mx-1" (click)="goNew()">New</button>
+        <button class="btn btn-info float-right d-inline-block mx-1" (click)="onSaveOrEdit($event)">{{isEdit ? "Save":"Edit"}}</button>
+        <button class="btn btn-info float-right d-inline-block mx-1" routerLink="/memberlist" routerDirection="backward">List</button>
+        </div>
+      </div>
+        
+      <br>
+        <div>
+          <form>
+            <div class="form-group">
+              <label for="memid" class="text-secondary">Member-ID</label>
+              <input type="text" name="memid" [(ngModel)]="member.id" class="form-control" id="memid"
+              autocomplete="off" [readonly]="!isEdit || !isNew" [disabled]="!isEdit || !isNew">
+            </div>
+            <div class="form-group">
+              <label for="memname" class="text-secondary">Member-Name</label>
+              <input type="text" name="memname" [(ngModel)]="member.name" class="form-control" id="memname"
+                autocomplete="off" [readonly]="!isEdit" [disabled]="!isEdit">
+            </div>
+            <div class="form-group">
+              <label for="mempoints" class="text-secondary">Total-Points</label>
+              <input type="text" name="mempoints" [(ngModel)]="member.points" class="form-control" id="mempoints"
+                autocomplete="off" [readonly]="!isEdit" [disabled]="!isEdit">
+            </div>
+  
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>  
+</ion-content>
+
+<ion-footer>
+  <small class="m-3 d-block text-secondary">&copy; Sai Han Inc.</small>
+</ion-footer>
+
+

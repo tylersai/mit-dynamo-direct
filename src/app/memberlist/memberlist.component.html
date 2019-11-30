@@ -1,0 +1,31 @@
+<ion-content>
+<div class="container py-3">
+  <div class="row justify-content-center">
+    <div class="col-sm-5">
+      <h3 class="text-success d-block my-3">MIT Member List</h3>
+      <hr>
+      <div class="row my-3"> 
+        <div class="col-12">
+          <a [routerLink]="['/member','']"><button class="btn btn-success float-right d-inline-block mx-1">New</button></a>
+          <button class="btn btn-info float-right d-inline-block mx-1" (click)="goRefresh()">Refresh</button>
+        </div>
+      </div>
+      <br>
+<div *ngIf="!noListMsg && memberlist" class="list-group">
+  <a *ngFor="let mem of memberlist" [routerLink]="['/member',(mem.id.N+'')]" class="list-group-item list-group-item-action list-group-item-success">
+  {{mem.id.N}} - {{mem.name.S}}
+  <span *ngIf="mem.points" class="badge badge-primary badge-pill float-right">{{mem.points.N}}</span>
+  </a>
+</div>
+        <br>
+        <div *ngIf="noListMsg" class="alert alert-secondary alert-dismissible fade show" role="alert">
+          <span class="text-center">{{noListMsg}}</span>
+        </div>
+    </div>
+  </div>
+</div>
+
+</ion-content>
+<ion-footer>
+  <small class="m-3 d-block text-secondary">&copy; Sai Han Inc.</small>
+</ion-footer>
