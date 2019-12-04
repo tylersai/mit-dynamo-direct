@@ -22,8 +22,8 @@ export class HomePage {
   ngOnInit(): void {
     AWS.config.update({
       region: 'us-east-2',
-      accessKeyId: "AKIAI7KKLA7CB4Y5BQYA",
-      secretAccessKey: "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"
+      accessKeyId: "access_key_id",
+      secretAccessKey: "secret_access_key"
     });
     this.docClient = new AWS.DynamoDB.DocumentClient();
   }
